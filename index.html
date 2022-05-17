@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <div class="text">
+          <h3>IF YOU DONT HAVE ACCOUNT PLEASE <br>CLICK ON SIGNUP GIVEN BELOW </h3>
+          <h3>SUBMIT BUTTON</h3>
+        </div>
+      </div>
+      
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form action="#" onsubmit="sendEmail(); reset(); return false">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                <i class='fas fa-id-card'></i>
+                <input type="number" id="quantity" name="quantity" min="1" max="100" placeholder="Enter your AGE">
+              </div>
+              <div class="DOB">
+                <i class='fas fa-id-card'></i>
+                <input type="date" id="birthday" name="birthday">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="CV">
+                <i class="fas fa-id-card"></i>
+              <label for="myfile">Select a file:</label>
+              <input type="file" id="myfile" name="myfile"><br><br>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+  <script>src="https://smtpjs.com/v3/smtp.js"</script>
+  <script>
+    function sendEmail(){
+                    Email.send({
+                  Host : "smtp.gmail.com",
+                  Username : "k23893211@gmail.com",
+                  Password : "kumar@123",
+                  To : 'type your email to get notification',
+                  From : document.getElementById("email").value,
+                  Subject : "new contact form enquiry",
+                  Body : "Name: " + document.getElementById("name").value
+                          + "<br> Email" + document.getElementById("email").value
+                          + "<br> age" + document.getElementById("age").value
+                          + "<br> DOB" + document.getElementById("DOB").value
+                          + "<br> Resume" + document.getElementById("resume").value
+
+
+              }).then(
+                message => alert("message send successfully")
+              );
+    }
+  </script>
+</body>
+</html>
